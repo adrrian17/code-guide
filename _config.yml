@@ -1,5 +1,5 @@
-name:          Code Guide by @mdo
-description:   Standards for developing flexible, durable, and sustainable HTML and CSS.
+name:          Guía de Código por @mdo
+description:   Estándares para desarrollar HTML y CSS, flexibles, duraderos y sustentables.
 url:           http://mdo.github.com/code-guide
 
 markdown:      rdiscount
