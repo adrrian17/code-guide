@@ -4,6 +4,8 @@ Code Guide is a project for documenting standards for developing flexible, durab
 
 **[Start reading ☞](http://mdo.github.io/code-guide)**
 
+---
+
 ### License
 
 Released under MIT by, and copyright 2014, @mdo.
@@ -12,10 +14,15 @@ Released under MIT by, and copyright 2014, @mdo.
 
 Heavily inspired by [Idiomatic CSS](https://github.com/necolas/idiomatic-css) and the [GitHub Styleguide](http://github.com/styleguide).
 
-### Translates
+### Translations
 
-[Portuguese](http://diegoeis.github.io/code-guide/) - Translated by [Diego Eis](http://tableless.com.br/)  
-[Spanish](http://adrianayala.mx/code-guide/es/) - Translated by [Adrian Ayala](http://adrianayala.mx/)  
-[Indonesian](http://diagramatics.github.io/code-guide-id) - Translated by [Steven Sinatra](http://diagramatics.me)  
+Translations are maintained by their creators and may not always be up to date with the original here.
+
+- [Portuguese](http://diegoeis.github.io/code-guide/) - Translated by [Diego Eis](http://tableless.com.br/)  
+- [Spanish](http://adrianayala.mx/code-guide/es/) - Translated by [Adrian Ayala](http://adrianayala.mx/)  
+- [Indonesian](http://diagramatics.github.io/code-guide-id) - Translated by [Steven Sinatra](http://diagramatics.me)
+- [Chinese](http://zoomzhao.github.io/code-guide/) - Translated by [Zoom Zhao](https://github.com/ZoomZhao)  
+
+Have a translation you'd like to link to? Open a pull request to add it.
 
 <3
