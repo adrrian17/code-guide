@@ -30,6 +30,7 @@ layout: default
       <li><a href="#css-prefixed-properties">Propiedades prefijadas</a></li>
       <li><a href="#css-single-declarations">Reglas para las declaraciones singulares</a></li>
       <li><a href="#css-shorthand">Notación abreviada</a></li>
+      <li><a href="#css-nesting">Anidando en Less y Sass</a></li>
       <li><a href="#css-comments">Comentarios</a></li>
       <li><a href="#css-classes">Clases</a></li>
       <li><a href="#css-selectors">Selectores</a></li>
@@ -185,8 +186,8 @@ layout: default
       <li>Incluye un espacio después de<code>:</code> para cada declaración.</li>
       <li>Cada declaración debe aparecer en su propia línea para un informe de errores más preciso.</li>
       <li>Termina todas las declaraciones con un punto y coma. El de la última declaración es opcional, pero tu código es más propenso a errores sin ellos.</li>
-      <li>Los valores separados por comas deben incluir un espacio después de cada coma.</li>
-      <li>No incluyas espacios después de las comas <em>dentro de</em> los colores <code>rgb()</code> o <code>rgba()</code>, y no antepongas un cero a los valores.</li>
+      <li>Los valores separados por comas deben incluir un espacio después de cada coma (v.g., <code>box-shadow</code>)</li>
+      <li>No incluyas espacios después de las comas <em>dentro de</em> los valores de <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, o <code>rect()</code>. Esto ayuda a diferenciar multiples valores de colores (coma, no espacio) de los multiples valores de propiedad (coma con espacio). También, no prefijes los valores con un cero (v.g., <code>.5</code> en vez de <code>0.5</code>).</li>
       <li>Cambia a minúscula todos los valores hexadecimales, v.g., <code>#fff</code>. Las letras minúsculas son mucho más fáciles de discernir cuando se explora un documento, ya que tienden a tener formas más únicas.</li>
       <li>Utiliza valores hexadecimales abreviados donde sea posible, v.g., <code>#fff</code> en vez de <code>#ffffff</code>.</li>
       <li>Cita los valores de los atributos en los selectores, v.g., <code>input[type="text"]</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">Son opcionales en algunos casos</a>, y es una buena práctica para la consistencia.</li>
@@ -272,7 +273,7 @@ layout: default
 
 <div class="section" id="css-nesting">
   <div class="col">
-    <h3>Anidando en LESS y SASS</h3>
+    <h3>Anidando en Less y Sass</h3>
     <p>Evita la anidación innecesaria. Sólo porque puedas anidar, no significa que debas hacerlo. Considera anidar solamente si debes extender los estilos al padre y hay multiples elementos para anidar.</p>
   </div>
   <div class="col">
