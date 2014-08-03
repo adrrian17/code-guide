@@ -1,6 +1,6 @@
 name:          Guía de Código por @mdo
 description:   Estándares para desarrollar HTML y CSS, flexibles, duraderos y sustentables.
-url:           http://mdo.github.com/code-guide
+url:           http://adrianayala.mx/code-guide/es
 
 markdown:      rdiscount
 permalink:     pretty

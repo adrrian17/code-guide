@@ -12,7 +12,9 @@ layout: default
     <ul>
       <li><a href="#html-syntax">Syntax</a></li>
       <li><a href="#html-doctype">HTML5 doctype</a></li>
+      <li><a href="#html-lang">Language attribute</a></li>
       <li><a href="#html-encoding">Character encoding</a></li>
+      <li><a href="#html-ie-compatibility-mode">Internet Explorer compatibility mode</a></li>
       <li><a href="#html-style-script">CSS and JavaScript includes</a></li>
       <li><a href="#html-practicality">Practicality over purity</a></li>
       <li><a href="#html-attribute-order">Attribute order</a></li>
@@ -26,6 +28,7 @@ layout: default
     <ul>
       <li><a href="#css-syntax">CSS syntax</a></li>
       <li><a href="#css-declaration-order">Declaration order</a></li>
+      <li><a href="#css-import">Don't use @import</a></li>
       <li><a href="#css-media-queries">Media query placement</a></li>
       <li><a href="#css-prefixed-properties">Prefixed properties</a></li>
       <li><a href="#css-single-declarations">Rules with single declarations</a></li>
@@ -84,10 +87,36 @@ layout: default
   </div>
 </div>
 
+<div class="section" id="html-lang">
+  <div class="col">
+    <h3>Language attribute</h3>
+    <p>From the HTML5 spec:</p>
+    <blockquote>
+      <p>Authors are encouraged to specify a lang attribute on the root html element, giving the document's language. This aids speech synthesis tools to determine what pronunciations to use, translation tools to determine what rules to use, and so forth.</p>
+    </blockquote>
+    <p>Read more about the <code>lang</code> attribute <a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element">in the spec</a>.</p>
+    <p>Head to Sitepoint for a <a href="http://reference.sitepoint.com/html/lang-codes">list of language codes</a>.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/lang.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-ie-compatibility-mode">
+  <div class="col">
+    <h3>IE compatibility mode</h3>
+    <p>Internet Explorer supports the use of a document compatibility <code>&lt;meta&gt;</code> tag to specify what version of IE the page should be rendered as. Unless circumstances require otherwise, it's most useful to instruct IE to use the latest supported mode with <strong>edge mode</strong>.</p>
+    <p>For more information, <a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e">read this awesome Stack Overflow article</a>.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/ie-compatibility-mode.html %}{% endhighlight %}
+  </div>
+</div>
+
 <div class="section" id="html-encoding">
   <div class="col">
     <h3>Character encoding</h3>
-    <p>Quickly and easily ensure proper rendering of your content by declaring an explicit character encoding.</p>
+    <p>Quickly and easily ensure proper rendering of your content by declaring an explicit character encoding. When doing so, you may avoid using character entities in your HTML, provided their encoding matches that of the document (generally UTF-8).</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/encoding.html %}{% endhighlight %}
@@ -190,7 +219,8 @@ layout: default
       <li>Each declaration should appear on its own line for more accurate error reporting.</li>
       <li>End all declarations with a semi-colon. The last declaration's is optional, but your code is more error prone without it.</li>
       <li>Comma-separated property values should include a space after each comma (e.g., <code>box-shadow</code>).</li>
-      <li>Don't include spaces after commas <em>within</em> <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, or <code>rect()</code> values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space). Also, don't prefix values with a leading zero (e.g., <code>.5</code> instead of <code>0.5</code>).</li>
+      <li>Don't include spaces after commas <em>within</em> <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, or <code>rect()</code> values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space).</li>
+      <li>Don't prefix property values or color parameters with a leading zero (e.g., <code>.5</code> instead of <code>0.5</code> and <code>-.5px</code> instead of <code>-0.5px</code>).</li>
       <li>Lowercase all hex values, e.g., <code>#fff</code>. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.</li>
       <li>Use shorthand hex values where available, e.g., <code>#fff</code> instead of <code>#ffffff</code>.</li>
       <li>Quote attribute values in selectors, e.g., <code>input[type="text"]</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">They’re only optional in some cases</a>, and it’s a good practice for consistency.</li>
@@ -219,6 +249,22 @@ layout: default
   </div>
   <div class="col">
     {% highlight css %}{% include css/declaration-order.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-import">
+  <div class="col">
+    <h3>Don't use <code>@import</code></h3>
+    <p>Compared to <code>&lt;link&gt;</code>s, <code>@import</code> is slower, adds extra page requests, and can cause other unforeseen problems. Avoid them and instead opt for an alternate approach:</p>
+    <ul>
+      <li>Use multiple <code>&lt;link&gt;</code> elements</li>
+      <li>Compile your CSS with a preprocessor like Sass or Less into a single file</li>
+      <li>Concatenate your CSS files with features provided in Rails, Jekyll, and other environments</li>
+    </ul>
+    <p>For more information, <a href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">read this article by Steve Souders</a>.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include css/import.html %}{% endhighlight %}
   </div>
 </div>
 
@@ -306,6 +352,7 @@ layout: default
       <li>Prefix classes based on the closest parent or base class.</li>
       <li>Use <code>.js-*</code> classes to denote behavior (as opposed to style), but keep these classes out of your CSS.</li>
     </ul>
+    <p>It's also useful to apply many of these same rules when creating Sass and Less variable names.</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/class-names.css %}{% endhighlight %}
