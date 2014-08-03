@@ -66,6 +66,7 @@ layout: default
       <li>Los elementos anidados deben estar indentados una vez (dos espacios).</li>
       <li>Siempre usa comillas dobles, nunca comillas simples, en los atributos.</li>
       <li>No incluyas una diagonal al final en los elementos que se cierran así mismos—el <a href="http://dev.w3.org/html5/spec-author-view/syntax.html#syntax-start-tag">estándar de HTML5</a> dice que son opcionales.</li>
+      <li>No omitas los tags opcionales de cierre (v.g. <code>&lt;/li&gt;</code> or <code>&lt;/body&gt;</code>).</li>
     </ul>
   </div>
   <div class="col">
@@ -80,6 +81,32 @@ layout: default
   </div>
   <div class="col">
     {% highlight html %}{% include html/doctype.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-lang">
+  <div class="col">
+    <h3>Atributo de lenguaje</h3>
+    <p>De la especificación HTML5:</p>
+    <blockquote>
+      <p>Los autores son alentados a especificar un atributo de lenguaje en la raíz del elemento html, para dar el lenguaje del documento. Esto ayuda a que las herramientas de síntesis de voz determinen que pronunciación usar, a las herramientas de traducción que reglas usar y así sucesivamente.</p>
+    </blockquote>
+    <p>Lee más sobre el atributo <code>lang</code> <a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element">en la especificación</a>.</p>
+    <p>Dirigete a Sitepoint para una <a href="http://reference.sitepoint.com/html/lang-codes">lista códigos de lenguaje</a>.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/lang.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-ie-compatibility-mode">
+  <div class="col">
+    <h3>Modo de compatibilidad con IE</h3>
+    <p>Internet Explorer soporta el uso de una etiqueta de compatibilidad de documento <code>&lt;meta&gt;</code> para especificar que versión de IE se debería usar para interpretar la página. A menos que las circunstancias lo requieran de otra manera, es más útil darle la instrucción a IE de usar la modalidad más actual con la <strong>modalidad edge</strong>.</p>
+    <p>Para más información, <a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e">lee este asombroso artículo de Stack Overflow</a>.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/ie-compatibility-mode.html %}{% endhighlight %}
   </div>
 </div>
 
@@ -189,7 +216,7 @@ layout: default
       <li>Cada declaración debe aparecer en su propia línea para un informe de errores más preciso.</li>
       <li>Termina todas las declaraciones con un punto y coma. El de la última declaración es opcional, pero tu código es más propenso a errores sin ellos.</li>
       <li>Los valores separados por comas deben incluir un espacio después de cada coma (v.g., <code>box-shadow</code>)</li>
-      <li>No incluyas espacios después de las comas <em>dentro de</em> los valores de <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, o <code>rect()</code>. Esto ayuda a diferenciar multiples valores de colores (coma, no espacio) de los multiples valores de propiedad (coma con espacio). También, no prefijes los valores con un cero (v.g., <code>.5</code> en vez de <code>0.5</code>).</li>
+      <li>No incluyas espacios después de las comas <em>dentro de</em> los valores de <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, o <code>rect()</code>. Esto ayuda a diferenciar multiples valores de colores (coma, no espacio) de los multiples valores de propiedad (coma con espacio). También, no prefijes los valores con un cero (v.g., <code>.5</code> en vez de <code>0.5</code> y <code>-.5px</code> en vez de <code>-0.5px</code>).</li>
       <li>Cambia a minúscula todos los valores hexadecimales, v.g., <code>#fff</code>. Las letras minúsculas son mucho más fáciles de discernir cuando se explora un documento, ya que tienden a tener formas más únicas.</li>
       <li>Utiliza valores hexadecimales abreviados donde sea posible, v.g., <code>#fff</code> en vez de <code>#ffffff</code>.</li>
       <li>Cita los valores de los atributos en los selectores, v.g., <code>input[type="text"]</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">Son opcionales en algunos casos</a>, y es una buena práctica para la consistencia.</li>
@@ -218,6 +245,22 @@ layout: default
   </div>
   <div class="col">
     {% highlight css %}{% include css/declaration-order.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-import">
+  <div class="col">
+    <h3>No uses <code>@import</code></h3>
+    <p>Comparado con los <code>&lt;link&gt;</code>s, <code>@import</code> es más lento, agrega más peticiones de más, y puede causar otros imprevistos. Evítalos y opta mejor por un enfoque diferente::</p>
+    <ul>
+      <li>Usa múltiples elementos <code>&lt;link&gt;</code></li>
+      <li>Compila tu CSS en un sólo archivo con un preprocesador cómo Sass o Less</li>
+      <li>Concatena tu archivos de CSS con las características presentes en Rails, Jekyll, y otros ambientes</li>
+    </ul>
+    <p>Para más información, <a href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">lee este artículo de Steve Souders</a>.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include css/import.html %}{% endhighlight %}
   </div>
 </div>
 
