@@ -46,7 +46,7 @@ layout: default
 <div class="section" id="golden-rule">
   <div class="col">
     <h2>Regla de oro</h2>
-    <p>Cumple con esto, por voluntad propia, siempre llega a un acuerdo sobre las reglas. Pequeño o grande, has notar lo que está incorrecto. Para añadir o contribuir a esta Guía de Código, por favor <a href="https://github.com/adrrian17/code-guide/issues/new">abre un issue en GitHub</a>.</p>
+    <p>Cumple con estas o con tus reglas propias aceptadas, siempre. Pequeño o grande, has notar lo que está incorrecto. Para añadir o contribuir a esta Guía de Código, por favor <a href="https://github.com/adrrian17/code-guide/issues/new">abre un issue en GitHub</a>.</p>
   </div>
   <div class="col">
     <blockquote>
@@ -65,11 +65,11 @@ layout: default
   <div class="col">
     <h3>Sintaxis</h3>
     <ul>
-      <li>Usa "soft-tabs" con dos espacios—son la única manera de garantizar que el código se interpreta igual en cualquier ambiente.</li>
+      <li>Usa "soft-tabs" con dos espacios—es la única manera de garantizar que el código sea interpretado igualmente en cualquier ambiente.</li>
       <li>Los elementos anidados deben estar indentados una vez (dos espacios).</li>
       <li>Siempre usa comillas dobles, nunca comillas simples, en los atributos.</li>
       <li>No incluyas una diagonal al final en los elementos que se cierran así mismos—el <a href="http://dev.w3.org/html5/spec-author-view/syntax.html#syntax-start-tag">estándar de HTML5</a> dice que son opcionales.</li>
-      <li>No omitas los tags opcionales de cierre (v.g. <code>&lt;/li&gt;</code> or <code>&lt;/body&gt;</code>).</li>
+      <li>No omitas las etiquetas opcionales de cierre (v.g. <code>&lt;/li&gt;</code> or <code>&lt;/body&gt;</code>).</li>
     </ul>
   </div>
   <div class="col">
@@ -116,7 +116,7 @@ layout: default
 <div class="section" id="html-encoding">
   <div class="col">
     <h3>Códificación de caracteres</h3>
-    <p>De manera rápida y fácil asegura la correcta interpretación de tu contenido decladarando de manera explícita una códificación de caracteres.</p>
+    <p>De manera rápida y fácil asegura la correcta interpretación de tu contenido decladarando de manera explícita una códificación de caracteres. Al hacerlo, puede que evites el uso de entidades de caracteres en tu código HTML, siempre y cuando su codificación coincida con la del documento (generalmente UTF-8)</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/encoding.html %}{% endhighlight %}
@@ -126,7 +126,7 @@ layout: default
 <div class="section" id="html-style-script">
   <div class="col">
     <h3>Etiquetas para CSS y JavaScript</h3>
-    <p>Por especificaciones de HTML5, normalmente no hay necesidad de especificar el <code>type</code> cuando incluyes archivos CSS y JavaScript porque <code>text/css</code> y <code>text/javascript</code> son sus respectivos valores por default.</p>
+    <p>Por especificaciones de HTML5, normalmente no hay necesidad de especificar el <code>type</code> cuando incluyes archivos CSS y JavaScript porque <code>text/css</code> y <code>text/javascript</code> son sus respectivos valores estándar.</p>
     <h4>HTML5 spec links</h4>
     <ul>
       <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element">Usando link</a></li>
@@ -141,7 +141,7 @@ layout: default
 
 <div class="section" id="html-practicality">
   <div class="col">
-    <h3>Practicidad sobre pureza</h3>
+    <h3>Practicidad antes que la pureza</h3>
     <p>Esfuérzate por mantener los estándares y la semántica de HTML, pero no a expensas de la practicidad. Usa la menor cantidad de marcado con la menor complejidad posible.</p>
   </div>
 </div>
@@ -177,7 +177,7 @@ layout: default
     <blockquote>
       <p>Si el atributo está presente, su valor debe ser un cadena vacía o [...] el nombre canónico del atributo, sin espacios en blanco al principio o al final.</p>
     </blockquote>
-    <p><strong>En pocas palabras, no agregues el valor.</strong></p>
+    <p><strong>En pocas palabras, no agregues un valor.</strong></p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/boolean-attributes.html %}{% endhighlight %}
@@ -211,7 +211,7 @@ layout: default
   <div class="col">
     <h3>Sintaxis</h3>
     <ul>
-      <li>Usa "soft-tabs" con dos espacios—son la única manera de garantizar que el código se interpreta igual en cualquier ambiente.</li>
+      <li>Usa "soft-tabs" con dos espacios—son la única manera de garantizar que el código sea interpretado igualmente en cualquier ambiente.</li>
       <li>Cuando agrupes los selectores, mantén los selectores individuales a una sola línea.</li>
       <li>Incluye un espacio antes de la llave de apertura en los bloques de declaración para la legibilidad.</li>
       <li>Coloca las llaves de cierre en una nueva línea.</li>
@@ -242,7 +242,7 @@ layout: default
       <li>Tipografía</li>
       <li>Visual</li>
     </ol>
-    <p>Posicionamiento es lo primero, ya que puede eliminar un elemento del flujo normal del documento y reemplazar estilos relacionados con el modelo de caja. El modelo de caja que viene a continuación, ya que determina las dimensiones y la colocación de un componente.</p>
+    <p>Posicionamiento es lo primero, ya que puede eliminar un elemento del flujo normal del documento y reemplazar estilos relacionados con el modelo de caja. El modelo de caja viene a continuación, ya que determina las dimensiones y la colocación de un componente.</p>
     <p>Todo lo demás toma lugar <em>dentro</em> del componente o sin impactar las dos secciones anteriores, y por lo tanto vienen al último.</p>
     <p>Para obtener una lista completa de propiedades y su orden, por favor consulta <a href="http://twitter.github.com/recess">Recess</a>.</p>
   </div>
@@ -254,7 +254,7 @@ layout: default
 <div class="section" id="css-import">
   <div class="col">
     <h3>No uses <code>@import</code></h3>
-    <p>Comparado con los <code>&lt;link&gt;</code>s, <code>@import</code> es más lento, agrega más peticiones de más, y puede causar otros imprevistos. Evítalos y opta mejor por un enfoque diferente::</p>
+    <p>Comparado con los <code>&lt;link&gt;</code>s, <code>@import</code> es más lento, añade peticiones de página adicionales, y puede causar otros imprevistos. Evítalos y opta mejor por un enfoque diferente:</p>
     <ul>
       <li>Usa múltiples elementos <code>&lt;link&gt;</code></li>
       <li>Compila tu CSS en un sólo archivo con un preprocesador cómo Sass o Less</li>
@@ -269,8 +269,8 @@ layout: default
 
 <div class="section" id="css-media-queries">
   <div class="col">
-    <h3>Colocación de las media queries</h3>
-    <p>Coloca las media queries lo más cercano al grupo de reglas relevantes cuando sea posible.  No las agrupes todas en una hoja de estilos separada o al final del documento. Si lo haces, sólo haces que sea más fácil que la gente las pase por alto en el futuro. Aquí está una configuración típica.</p>
+    <h3>Colocación de consulta de medios <em>Media Queries</em></h3>
+    <p>Coloca <em>Media Queries</em> lo más cercano al grupo de reglas relevantes cuando sea posible. No las agrupes todas en una hoja de estilos separada o al final del documento. Al agrupar estas reglas, facilitas a que alguien las pase por alto en el futuro. Aquí está una configuración típica.</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/media-queries.css %}{% endhighlight %}
@@ -281,7 +281,7 @@ layout: default
   <div class="col">
     <h3>Propiedades prefijadas</h3>
     <p>Cuando uses los prefijos de navegadores, indenta cada propiedad de tal manera que el valor de la declaración se alinea verticalmente para facilitar la edición multi-línea</p>
-    <p>En Textmate, usa <strong>Text &rarr; Edit Each Line in Selection</strong> (&#8963;&#8984;A). En Sublime Text 2, use <strong>Selection &rarr; Add Previous Line</strong> (&#8963;&#8679;&uarr;) and <strong>Selection &rarr;  Add Next Line</strong> (&#8963;&#8679;&darr;).</p>
+    <p>En Textmate, usa <strong>Text &rarr; Edit Each Line in Selection</strong> (&#8963;&#8984;A). En Sublime Text 2, usa <strong>Selection &rarr; Add Previous Line</strong> (&#8963;&#8679;&uarr;) y <strong>Selection &rarr;  Add Next Line</strong> (&#8963;&#8679;&darr;).</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/prefixed-properties.css %}{% endhighlight %}
@@ -322,7 +322,7 @@ layout: default
 <div class="section" id="css-nesting">
   <div class="col">
     <h3>Anidando en Less y Sass</h3>
-    <p>Evita la anidación innecesaria. Sólo porque puedas anidar, no significa que debas hacerlo. Considera anidar solamente si debes extender los estilos al padre y hay multiples elementos para anidar.</p>
+    <p>Evita la anidación innecesaria. Sólo porque puedas anidar, no significa que debas hacerlo. Considera anidar solamente si debes extender el ámbito de los estilos al padre y hay multiples elementos para anidar.</p>
   </div>
   <div class="col">
     {% highlight scss %}{% include css/nesting.scss %}{% endhighlight %}
@@ -345,9 +345,9 @@ layout: default
     <h3>Nombres de clase</h3>
     <ul>
       <li>Mantén las clases en minúsculas y usa guiones (no guiones bajos o camelCase). Los guiones sirven como cortes naturales en clase relacionadas (v.g., <code>.btn</code> y <code>.btn-danger</code>).</li>
-      <li>Envita la notación abreviada y arbitraria. <code>.btn</code> es útil <em>button</em>, pero <code>.s</code> no significa nada.</li>
+      <li>Envita la notación abreviada y arbitraria. <code>.btn</code> es útil para <em>button</em>, pero <code>.s</code> no significa nada.</li>
       <li>Mantén las clases lo más breve y concisas posible.</li>
-      <li>Usa nombres significativos; utiliza nombres estructurales o intencionales sobre presentacionales.</li>
+      <li>Usa nombres significativos; como nombres estructurales o intencionales más que presentacionales.</li>
       <li>Prefija las clases basandote en la clase padre más cercana o la de base.</li>
       <li>Usa las clases <code>.js-*</code> para denotar comportamiento (al contrario del estilo), pero mantén estas clases fuera de tu CSS.</li>
     </ul>
@@ -362,9 +362,9 @@ layout: default
     <h3>Selectores</h3>
     <ul>
       <li>Usa clases en vez de la etiqueta genérica de cada elemento para un óptimo rendimiento de representación</li>
-      <li>Evita el uso de varios selectores de atributos (v.g., <code>[class^="..."]</code>) en componentes que aparecen comúnmente. Se sabe que el rendimiento del navegador se ve afectado por esto.</li>
-      <li>Mantén los selectores cortos y tratar de limitar el número de elementos en cada selector a tres.</li>
-      <li>Extiende las clases al padre más cercano <strong>sólo</strong> cuando sea necesario (v.g., cuando no utilice clases prefijadas).</li>
+      <li>Evita el uso de varios selectores de atributos (v.g., <code>[class^="..."]</code>) en componentes que aparecen comúnmente. Se da por sabido que el rendimiento del navegador se ve afectado por esto.</li>
+      <li>Mantén los selectores cortos y trata de limitar el número de elementos en cada selector a tres.</li>
+      <li>Extiende el ámbito de las clases al padre más cercano <strong>sólo</strong> cuando sea necesario (v.g., cuando no utilice clases prefijadas).</li>
     </ul>
     <p>Lectura adicional:</p>
     <ul>
@@ -383,8 +383,8 @@ layout: default
     <ul>
       <li>Organiza secciones de código por componente.</li>
       <li>Desarrolla una jerarquía de comentarios coherente.</li>
-      <li>Usa el espacio en blanco a tu favor cuando separes secciones de código para explorar documentos largos.</li>
-      <li>Cuando uses múltiples archivos CSS, desglosalos por componente en lugar de por página. Las páginas pueden ser reorganizadas y los componentes moverse.</li>
+      <li>Usa consistentemente espacios en blanco a tu favor al separar las secciones de código para explorar documentos largos.</li>
+      <li>Cuando uses múltiples archivos CSS, desglosalos por componente en lugar de por página. Las páginas pueden ser reorganizadas y los componentes pueden moverse.</li>
     </ul>
   </div>
   <div class="col">
@@ -402,6 +402,5 @@ layout: default
       <li>Establece la códificación a UTF-8.</li>
       <li>Agrega una línea nueva al final de cada archivo.</li>
     </ul>
-    <p>Considera documentar y aplicar estos ajustes al archivo <code>.editorconfig</code> de tu proyecto. Por ejemplo, echa un vistazo <a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">al que hay en Bootstrap</a>. Aprender más <a href="http://editorconfig.org">acerca del EditorConfig</a>.</p>
+    <p>Considera documentar y aplicar estos ajustes al archivo <code>.editorconfig</code> de tu proyecto. Por ejemplo, echa un vistazo <a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">al que hay en Bootstrap</a>. Aprende más <a href="http://editorconfig.org">acerca del EditorConfig</a>.</p>
   </div>
-</div>
